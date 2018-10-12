@@ -69,7 +69,7 @@ public class CountryMap {
         return drivers;
     }
 
-    public void setDrivers(Set<Driver drivers) {
+    public void setDrivers(Set<Driver> drivers) {
         this.drivers = drivers;
     }
 
@@ -103,14 +103,6 @@ public class CountryMap {
 
     public void setyPosition(int yPosition) {
         this.yPosition = yPosition;
-    }
-
-    public Order getCityOfDischargeOrder() {
-        return cityOfDischargeOrder;
-    }
-
-    public void setCityOfDischargeOrder(Order cityOfDischargeOrder) {
-        this.cityOfDischargeOrder = cityOfDischargeOrder;
     }
 
     public CountryMap(String city, int xPosition, int yPosition) {
