@@ -3,9 +3,7 @@ package com.tsystems.logiweb.entity;
 import com.tsystems.logiweb.entity.enums.OrderStatus;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
-import java.sql.Timestamp;
 import java.util.Date;
-import java.util.Objects;
 
 @Entity
 @Table(name = "order")
