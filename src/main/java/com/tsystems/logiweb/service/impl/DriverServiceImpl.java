@@ -20,10 +20,10 @@ public class DriverServiceImpl implements DriverService {
         return driverRepository.saveAndFlush(driver);
     }
 
-    @Override
+/*    @Override
     public void delete(int id) {
         driverRepository.delete(id);
-    }
+    }*/
 
     @Override
     public Driver getByName(String name) {
