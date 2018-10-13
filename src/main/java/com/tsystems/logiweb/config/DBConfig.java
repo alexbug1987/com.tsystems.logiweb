@@ -21,7 +21,7 @@ import java.util.Properties;
 @ComponentScan("com.tsystems.logiweb")
 @PropertySource("classpath:app.properties")
 @EnableJpaRepositories("com.tsystems.logiweb.repository")
-public class DataConfig {
+public class DBConfig {
 
     private static final String PROP_DATABASE_DRIVER = "db.driver";
     private static final String PROP_DATABASE_PASSWORD = "db.password";
