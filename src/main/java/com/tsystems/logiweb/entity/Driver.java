@@ -124,4 +124,18 @@ public class Driver {
         this.driverStatus = driverStatus;
         this.driverCountry = driverCountry;
     }
+
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "driverId=" + driverId +
+                ", name='" + name + '\'' +
+                ", sirname='" + sirname + '\'' +
+                ", personalNumber=" + personalNumber +
+                ", workingHoursThisMonth=" + workingHoursThisMonth +
+                ", driverStatus=" + driverStatus +
+                ", driverCountry=" + driverCountry +
+                ", driverTruck=" + driverTruck +
+                '}';
+    }
 }

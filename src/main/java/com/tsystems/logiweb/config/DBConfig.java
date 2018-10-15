@@ -38,7 +38,6 @@ public class DBConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
         dataSource.setDriverClassName(env.getRequiredProperty(PROP_DATABASE_DRIVER));
         dataSource.setUrl(env.getRequiredProperty(PROP_DATABASE_URL));
         dataSource.setUsername(env.getRequiredProperty(PROP_DATABASE_USERNAME));
@@ -76,4 +75,38 @@ public class DBConfig {
         return properties;
     }
 
+/*@Configuration
+@EnableJpaRepositories
+public class DBConfig {
+    @Bean
+    DriverManagerDataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/logiweb");
+        dataSource.setUsername("bugaevaf");
+        dataSource.setPassword("azm18_18653322");
+        return dataSource;
+    }
+
+    @Bean
+    LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean emFactory = new LocalContainerEntityManagerFactoryBean();
+        emFactory.setDataSource(dataSource());
+        emFactory.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+        emFactory.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+        Properties properties = new Properties();
+        properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");
+        emFactory.setJpaProperties(properties);
+        emFactory.setPackagesToScan("com.tsystems.logiweb.repository", "com.tsystems.logiweb.entity");
+        return emFactory;
+    }
+
+    @Bean
+    JpaTransactionManager transactionManager() {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(entityManagerFactory().getObject());
+        return transactionManager;
+    }*/
 }
+
+

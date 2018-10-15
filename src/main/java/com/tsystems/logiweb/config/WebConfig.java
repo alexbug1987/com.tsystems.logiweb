@@ -3,6 +3,8 @@ package com.tsystems.logiweb.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -11,8 +13,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
-@EnableWebMvc
 @ComponentScan("com.tsystems.logiweb.controller")
+@EnableWebMvc
+@EnableJpaRepositories
+//@Import({DBConfig.class})
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Bean
@@ -30,7 +34,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-           super.addResourceHandlers(registry);
-
+        registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/*");
     }
 }
